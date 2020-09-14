@@ -12,6 +12,6 @@ describe('It should validate the email attribute', () => {
     expect(() => new Email(EMPTY_NAME)).toThrowError(/^EmptyAtributeError.*/);
   });
   it('should fail on creating an email with an invalid email', () => {
-    expect(() => new Email(INVALID_NAME)).toThrowError(/^Error.*/);
+    expect(() => new Email(INVALID_NAME)).toThrowError(/^InvalidEmailError.*/);
   });
 });

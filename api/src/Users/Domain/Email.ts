@@ -1,4 +1,5 @@
 import { StringAttribute } from './StringAttribute';
+import { InvalidEmailError } from './InvalidEmailError';
 
 export class Email extends StringAttribute {
   readonly email: string;
@@ -11,7 +12,7 @@ export class Email extends StringAttribute {
 
   throwErrorIfInvalidEmail(email: string): void {
     if (!/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(email)) {
-      throw new Error('Error: Invalid email');
+      throw new InvalidEmailError('Invalid format on the email address');
     }
   }
 }
