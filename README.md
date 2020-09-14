@@ -90,8 +90,8 @@ To-DO
             - [ ] create
         - [ ] Create UserFs implementation
         - [ ] Create Application service
-            - GetAllUsers
-            - CreateUser
+            [ ] GetAllUsers
+            [ ] CreateUser
     - [ ] Create environment documentation
 
  **I've try to use github actions to validate the testing pipelines, but I've did not want to lose much time,
