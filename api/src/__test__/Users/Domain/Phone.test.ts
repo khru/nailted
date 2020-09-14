@@ -13,11 +13,13 @@ const EMPTY_NAME = '';
 
 describe('It should validate the phone attribute', () => {
   it('should create a valid name', () => {
-    expect(new Phone(VALID_PHONE).phone).toBe(VALID_PHONE);
+    expect(new Phone(VALID_PHONE).value).toBe(VALID_PHONE);
   });
+
   it('should fail on creating an phone with an empty string', () => {
     expect(() => new Phone(EMPTY_NAME)).toThrowError(/^EmptyAtributeError.*/);
   });
+
   it('should fail on creating an Phone with an invalid phone number', () => {
     INVALID_NUMBERS.forEach(number =>
       expect(() => new Phone(number)).toThrowError(/^InvalidPhoneError.*/),

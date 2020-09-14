@@ -5,7 +5,7 @@ const EMPTY_ID = '';
 
 describe('It should validate the Address attribute', () => {
   it('should create a valid Address', () => {
-    expect(new Address(VALID_ID).address).toBe(VALID_ID);
+    expect(new Address(VALID_ID).value).toBe(VALID_ID);
   });
 
   it('should fail on creating a Address', () => {

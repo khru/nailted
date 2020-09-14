@@ -83,12 +83,12 @@ To-DO
     - [ ] Create environment documentation
 - phase 3 - Design application backend
     - [ ] Create API design
-        - [ ] Create User entity [WIP]
+        - [X] Create User entity [WIP]
         - [X] Create Value Object of the attributes (just to make sure that they are not empty)
-        - [ ] Create UserFsRepositoryInterface
-            - [ ] getAll
-            - [ ] create
-        - [ ] Create UserFs implementation
+        - [X] Create UserRepositoryInterface
+            - [X] getAll
+            - [X] create
+        - [ ] Create UserFsRepository implementation
         - [ ] Create Application service
             [ ] GetAllUsers
             [ ] CreateUser
@@ -98,3 +98,7 @@ To-DO
  so it's not added on the first release**
 
  In a normal situation I would have created 2 repositories that way I could have use github actions as well as husky on commit
+
+
+# Refactors
+- [ ] The user creation should be able to handle multiple errors on creation.

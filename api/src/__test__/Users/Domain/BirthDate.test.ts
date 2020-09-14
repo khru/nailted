@@ -48,7 +48,7 @@ const EMPTY_NAME = '';
 describe('It should validate the birth date attribute', () => {
   it('should create a valid birth date', () => {
     VALID_DATES.forEach(birthDate => {
-      expect(new Birthdate(birthDate).birthDate).toBe(birthDate);
+      expect(new Birthdate(birthDate).value).toBe(birthDate);
     });
   });
 

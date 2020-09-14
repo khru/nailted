@@ -1,11 +1,11 @@
 interface ValidUserData {
   id: string;
-  firstName: string;
-  lastName: string;
+  name: string;
+  surname: string;
   address: string;
-  phoneNumber: string;
+  phone: string;
   email: string;
-  birthDate: string;
+  birthdate: string;
 }
 
 export { ValidUserData };

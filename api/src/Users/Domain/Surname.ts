@@ -1,10 +1,13 @@
 import { StringAttribute } from './StringAttribute';
 
 export class Surname extends StringAttribute {
-  readonly surname: string;
+  readonly value: string;
   constructor(surname: string) {
     super();
     this.throwErrorIfEmptyAttribute(surname, 'The attribute surname can not be empty');
-    this.surname = surname;
+    this.value = surname;
+  }
+  equals(surname: Surname): boolean {
+    return this.value === surname.value;
   }
 }
