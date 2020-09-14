@@ -1,0 +1,16 @@
+version: "3.3"
+services:
+  node_back:
+    container_name: ${NODE_CONTAINER_NAME}
+    image: node:${NODE_VERSION}
+    restart: always
+    working_dir: /src
+    env_file:
+      - '.env'
+    volumes:
+      - ./:/src
+    ports:
+      - ${NODE_PORT}:${NODE_PORT}
+    environment:
+      - PORT=${NODE_PORT}
+    command: sh -c "npm install && npm audit fix --force && npm run start:watch"

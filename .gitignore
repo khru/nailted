@@ -1,0 +1,4 @@
+.env
+.idea/
+api/node_modules
+front/node_modules
