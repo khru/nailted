@@ -1,0 +1,12 @@
+on: push
+name: Execute test on push
+jobs:
+    tests:
+        runs-on: ubuntu-latest
+        steps:
+            - name: 🕎 Clone and checkout of the actual branch
+              uses: actions/checkout@v2
+            - name: 🚀 make run
+              run: make run
+            - name: ☢ Execute test
+              run: make test/api

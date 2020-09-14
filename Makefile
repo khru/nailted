@@ -21,8 +21,11 @@ run/api:
 run/front:
 	cd $(FRONT_FOLDER);docker-compose up -d
 
-test/api: run/api
+test/api-watch: run/api
 	cd $(API_FOLDER); npm run test:watch
+
+test/api: run/api
+	cd $(API_FOLDER); npm run test
 
 test/front: run/front
 	cd $(FRONT_FOLDER); npm run test:unit
