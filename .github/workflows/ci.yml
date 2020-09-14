@@ -7,7 +7,7 @@ jobs:
             - name: 🕎 Clone and checkout of the actual branch
               uses: actions/checkout@v2
             - name: Create env file
-                run: |
+              run: |
                   touch .env
                   echo API_FOLDER=./api >> .env
                   echo FRONT_FOLDER=./front >> .env
