@@ -84,7 +84,7 @@ To-DO
 - phase 3 - Design application backend
     - [ ] Create API design
         - [ ] Create User entity [WIP]
-        - [ ] Create Value Object of the attributes (just to make sure that they are not empty)
+        - [X] Create Value Object of the attributes (just to make sure that they are not empty)
         - [ ] Create UserFsRepositoryInterface
             - [ ] getAll
             - [ ] create
@@ -96,3 +96,5 @@ To-DO
 
  **I've try to use github actions to validate the testing pipelines, but I've did not want to lose much time,
  so it's not added on the first release**
+
+ In a normal situation I would have created 2 repositories that way I could have use github actions as well as husky on commit
