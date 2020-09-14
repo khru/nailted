@@ -13,12 +13,10 @@ help:
 	@echo "  permissions            🔑 Gives permissions to the 'scripts' folder"
 	@echo "  env-example            🧬 Creates the .env file with the project config"
 
-run:
-	@cd api/
-	@docker-compose up -d
-	@cd ../front
-	@docker-compose up -d
-	env-example
+run: env-example
+	cd $(API_FOLDER); docker-compose up -d
+	cd $(FRONT_FOLDER);docker-compose up -d
+	
 
 log/api:
 	cd $(value API_FOLDER); docker-compose logs -f -t

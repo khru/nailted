@@ -1,4 +1,5 @@
 # Enviroment documentation
+Tu run this project you can use the `make` command
 
 # Task
 ```
@@ -28,10 +29,10 @@ birthdate.
 To-DO
 ---
 - phase 1 - Setup environment
-- [ ] Create folder structure
-    - [ ] API and Front folder
-    - [ ] Create Dockers
-    - [ ] Create initial documentation
+    - [X] Create folder structure
+        - [X] API and Front folder
+        - [X] Create Dockers
+        - [X] Create initial documentation
 - phase 2 - Design application front
     - [ ] Create front views and components
     - [ ] Create cypress test
