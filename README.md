@@ -93,3 +93,6 @@ To-DO
             - GetAllUsers
             - CreateUser
     - [ ] Create environment documentation
+
+ **I've try to use github actions to validate the testing pipelines, but I've did not want to lose much time,
+ so it's not added on the first release**
