@@ -1,3 +1,4 @@
+id, name, surname, address, phone, email, birthdate.
 1,Della,Cox,"4945 Lucky Duck Drive",412-862-8457,DellaDCox@superrito.com,10/12/1985
 2,Walter,Jeske,"495 Rafe Lane",662-729-8758,WalterJJeske@armyspy.com,3/15/1951
 3,Ron,Plaza,"4738 Woodside Circle",850-868-3521,RonAPlaza@dayrep.com,3/30/1990
