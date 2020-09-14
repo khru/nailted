@@ -37,6 +37,6 @@ To-DO
     - [ ] Create front views and components
     - [ ] Create cypress test
     - [ ] Create environment documentation
-- phase 2 - Design application front
+- phase 3 - Design application front
     - [ ] Create API design
     - [ ] Create environment documentation
