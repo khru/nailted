@@ -7,11 +7,11 @@ export class Phone extends StringAttribute {
   constructor(phone: string) {
     super();
     this.throwErrorIfEmptyAttribute(phone, 'The attribute email can not be empty');
-    this.throwErrorIfInvalidEmail(phone);
+    this.throwErrorIfInvalidPhoneNumber(phone);
     this.phone = phone;
   }
 
-  throwErrorIfInvalidEmail(phone: string): void {
+  throwErrorIfInvalidPhoneNumber(phone: string): void {
     if (!this.VALID_PHONE_REGEX.test(phone)) {
       throw new InvalidPhoneError('Invalid format on the phone number');
     }

@@ -2,6 +2,7 @@ import { StringAttribute } from './StringAttribute';
 import { InvalidEmailError } from './InvalidEmailError';
 
 export class Email extends StringAttribute {
+  private readonly VALID_EMAIL_REGEX: RegExp = new RegExp(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/gm);
   readonly email: string;
   constructor(email: string) {
     super();
@@ -11,7 +12,7 @@ export class Email extends StringAttribute {
   }
 
   throwErrorIfInvalidEmail(email: string): void {
-    if (!/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(email)) {
+    if (!this.VALID_EMAIL_REGEX.test(email)) {
       throw new InvalidEmailError('Invalid format on the email address');
     }
   }
