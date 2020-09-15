@@ -326,12 +326,27 @@ const INVALID_DATA = [
 
 const INVALID_USER_DATA: ValidUserData[] = new Array<ValidUserData>(...INVALID_DATA);
 
+const USER_JSON = {
+  address: '4945 Lucky Duck Drive',
+  birthDate: '10/12/1985',
+  email: 'DellaDCox@superrito.com',
+  id: '1',
+  name: 'Della',
+  phone: '412-862-8457',
+  surname: 'Cox',
+};
+
 describe('It should validate the data the gets from the csv file', () => {
   it('should create a valid User', () => {
     VALID_USER_DATA.forEach(user => {
       expect(new User(user).equals(user)).toBe(true);
     });
   });
+
+  it('should return a valid JSON from a user', () => {
+    expect(new User(VALID_USER_DATA[0]).toJSON()).toStrictEqual(USER_JSON);
+  });
+
   it('should fail to create a valid User based on wrong data', () => {
     INVALID_USER_DATA.forEach(user => {
       expect(() => new User(user)).toThrowError(/^InvalidUserError.*/);

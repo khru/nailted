@@ -7,8 +7,9 @@ import { Phone } from './Phone';
 import { Address } from './Address';
 import { Birthdate } from './BirthDate';
 import { InvalidUserError } from './InvalidUserError';
+import { ToJSON } from './ToJSON';
 
-export class User {
+export class User implements ToJSON {
   id: Id;
   name: Name;
   surname: Surname;
@@ -47,5 +48,21 @@ export class User {
       this.phone.equals(comparator.phone) &&
       this.address.equals(comparator.address)
     );
+  }
+
+  toJSON(): object {
+    return JSON.parse(this.toString());
+  }
+
+  toString(): string {
+    return JSON.stringify({
+      id: this.id.value,
+      name: this.name.value,
+      surname: this.surname.value,
+      address: this.address.value,
+      phone: this.phone.value,
+      email: this.email.value,
+      birthDate: this.birthDate.value,
+    });
   }
 }
