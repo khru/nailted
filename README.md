@@ -83,15 +83,15 @@ To-DO
     - [ ] Create environment documentation
 - phase 3 - Design application backend
     - [ ] Create API design
-        - [X] Create User entity [WIP]
+        - [X] Create User entity
         - [X] Create Value Object of the attributes (just to make sure that they are not empty)
         - [X] Create UserRepositoryInterface
             - [X] getAll
             - [X] create
         - [ ] Create UserFsRepository implementation
         - [ ] Create Application service
-            [ ] GetAllUsers
-            [ ] CreateUser
+            - [X] GetAllUsers
+            - [ ] CreateUser [WIP]
     - [ ] Create environment documentation
 
  **I've try to use github actions to validate the testing pipelines, but I've did not want to lose much time,
@@ -100,5 +100,7 @@ To-DO
  In a normal situation I would have created 2 repositories that way I could have use github actions as well as husky on commit
 
 
-# Refactors
+# Improves
 - [ ] The user creation should be able to handle multiple errors on creation.
+- [ ] Extract testing doubles from the testcases to other files (+ readability)
+- [ ] The framework should have DI support using inversify.js
