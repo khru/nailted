@@ -73,10 +73,10 @@ To-DO
         - [X] Create initial documentation
 - phase 2 - Design application front
     - [ ] Create front views and components
-        - [ ] Create List component (I choose to do all the logic on the front because it's only a prototype)
-            - [ ] Implement the pagination on the front
-            - [ ] Implement the order of the list item
-            - [ ] Implement the filter
+        - [X] Create List component (I choose to do all the logic on the front because it's only a prototype)
+            - [X] Implement the pagination on the front
+            - [X] Implement the order of the list item
+            - [X] Implement the filter
         - [ ] Create User component
         - [ ] Create CreateUser component
     - [ ] Create cypress test
@@ -88,11 +88,11 @@ To-DO
         - [X] Create UserRepositoryInterface
             - [X] getAll
             - [X] create
-        - [ ] Create UserFsRepository implementation
-        - [ ] Create Application service
+        - [ ] Create UserFsRepository implementation [~]
+        - [ ] Create Application service [~]
             - [X] GetAllUsers
             - [ ] CreateUser [WIP]
-    - [ ] Create environment documentation
+    - [ ] Create environment documentation [~]
 
  **I've try to use github actions to validate the testing pipelines, but I've did not want to lose much time,
  so it's not added on the first release**
@@ -101,6 +101,10 @@ To-DO
 
 
 # Improves
+- [ ] Frontend features
+    - [ ] Pagination
+    - [ ] Search
+    - [ ] Shorting
 - [ ] The user creation should be able to handle multiple errors on creation.
 - [ ] Extract testing doubles from the testcases to other files (+ readability)
 - [ ] The framework should have DI support using inversify.js
