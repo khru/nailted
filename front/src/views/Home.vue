@@ -1,17 +1,17 @@
 <template>
     <div class="home">
-        <UserList/>
+        <UserList />
     </div>
 </template>
 
-<script>
-// @ is an alias to /src
-import UserList from "@/components/UserList.vue";
+<script lang="ts">
+import { Component, Vue } from "vue-property-decorator";
+import UserList from "@/components/User/UserList.vue"; // @ is an alias to /src
 
-export default {
-    name: "Home",
+@Component({
     components: {
         UserList
     }
-};
+})
+export default class Home extends Vue {}
 </script>

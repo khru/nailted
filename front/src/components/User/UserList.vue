@@ -5,9 +5,7 @@
                 <h2 class="text-2xl font-semibold leading-tight">👥 Users</h2>
             </div>
             <div class="my-2 flex sm:flex-row flex-col">
-                <div class="flex flex-row mb-1 sm:mb-0">
-
-                </div>
+                <div class="flex flex-row mb-1 sm:mb-0"></div>
                 <div class="block relative">
                     <span
                         class="h-full absolute inset-y-0 left-0 flex items-center pl-2"
@@ -30,7 +28,7 @@
             </div>
             <div class="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
                 <div
-                    class="inline-block min-w-full shadow rounded-lg overflow-hidden"
+                    class="inline-block min-w-full shadow rounded-lg overflow-hidden shadow-lg"
                 >
                     <table class="min-w-full leading-normal">
                         <thead>
@@ -83,12 +81,8 @@
                                     class="px-5 py-5 border-b border-gray-200 bg-white text-sm"
                                 >
                                     <div class="flex items-center">
-                                        <div class="flex-shrink-0 w-10 h-10">
-                                            <img
-                                                class="w-full h-full rounded-full"
-                                                src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2.2&w=160&h=160&q=80"
-                                                alt=""
-                                            />
+                                        <div class="flex-shrink-0">
+                                            👤
                                         </div>
                                         <div class="ml-3">
                                             <p
@@ -135,14 +129,19 @@
                         </tbody>
                     </table>
                     <div
-                        class="px-5 py-5 bg-white border-t flex flex-col xs:flex-row items-center xs:justify-between          "
+                        class="px-5 py-5 bg-white border-t flex flex-col xs:flex-row items-center xs:justify-between"
                     >
                         <span
                             v-if="!searchedEmail"
                             class="text-xs xs:text-sm text-gray-900"
                         >
-                            Showing {{ paginationLimit }} of
-                            {{ totalOfUsers }} Entries
+                            Showing
+                            {{
+                                currentPage === 0
+                                    ? paginationLimit
+                                    : (currentPage + 1) * paginationLimit
+                            }}
+                            of {{ totalOfUsers }} Entries
                         </span>
                         <span
                             v-if="searchedEmail"
@@ -177,7 +176,10 @@
     </div>
 </template>
 
-<script>
+<script lang="ts">
+import { UserDTO } from './UserDTO';
+import { UsersCollection } from './UsersCollection';
+
 export default {
     name: "UserList",
     data: function() {
@@ -189,39 +191,6 @@ export default {
         };
     },
     methods: {
-        fullNameCompare(key = "fullName", order = "asc") {
-            return function innerSort(a, b) {
-                const varA =
-                    typeof a[key] === "string" ? a[key].toUpperCase() : a[key];
-                const varB =
-                    typeof b[key] === "string" ? b[key].toUpperCase() : b[key];
-
-                let comparison = 0;
-                if (varA > varB) {
-                    comparison = 1;
-                } else if (varA < varB) {
-                    comparison = -1;
-                }
-                return order === "desc" ? comparison * -1 : comparison;
-            };
-        },
-        chunkUsersIntoPages(users) {
-            const temporal = [];
-
-            for (
-                let i = 0, j = 0;
-                i < users.length;
-                i += this.paginationLimit, j++
-            ) {
-                const paginatorObject = {
-                    page: j,
-                    users: users.slice(i, i + this.paginationLimit)
-                };
-                temporal.push(paginatorObject);
-            }
-
-            return temporal;
-        },
         nextPage() {
             this.currentPage++;
         },
@@ -269,17 +238,15 @@ export default {
         }
     },
     async mounted() {
-        console.log(`${process.env.VUE_APP_API_URL}/users`);
         await new Promise((resolve, reject) =>
             fetch(`${process.env.VUE_APP_API_URL}/users`)
                 .then(resp => resp.json())
                 .then(users => {
-                    users.forEach(
-                        user => (user.fullName = `${user.name} ${user.surname}`)
-                    );
-                    this.usersPerPage = this.chunkUsersIntoPages(
-                        users.sort(this.fullNameCompare())
-                    );
+                    const usersOrderByFullName = users.map(user => new UserDTO(user)).sort(UserDTO.compareByFullName());
+                    this.usersPerPage = new UsersCollection(
+                        this.paginationLimit,
+                        usersOrderByFullName
+                    ).usersPerPage;
                     resolve(this.usersPerPage);
                 })
                 .catch(reason => {
