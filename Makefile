@@ -70,3 +70,5 @@ permissions:
 
 env-example:
 	./scripts/generate_env_example.sh
+	cd $(FRONT_FOLDER); ./scripts/generate_env_example.sh
+	cd $(API_FOLDER); ./scripts/generate_env_example.sh
