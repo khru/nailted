@@ -21,7 +21,5 @@ export class FsUserRepository implements UsersRepository {
     );
   }
 
-  create(user: User): void {
-
-  }
+  create(user: User): void {}
 }

@@ -9,7 +9,6 @@ describe('It should validate the email attribute', () => {
     VALID_EMAILS.forEach(mail => {
       expect(new Email(mail).value).toBe(mail);
     });
-
   });
   it('should fail on creating an email with an empty string', () => {
     expect(() => new Email(EMPTY_NAME)).toThrowError(/^EmptyAtributeError.*/);
