@@ -10,13 +10,13 @@ import { InvalidUserError } from './InvalidUserError';
 import { ToJSON } from './ToJSON';
 
 export class User implements ToJSON {
-  id: Id;
-  name: Name;
-  surname: Surname;
-  address: Address;
-  phone: Phone;
-  email: Email;
-  birthDate: Birthdate;
+  readonly id: Id;
+  readonly name: Name;
+  readonly surname: Surname;
+  readonly address: Address;
+  readonly phone: Phone;
+  readonly email: Email;
+  readonly birthDate: Birthdate;
 
   constructor(user: ValidUserData) {
     // TODO: Refactor it should be able to handle multiple errors
