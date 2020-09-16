@@ -15,7 +15,6 @@ const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
-app.use(express.static(`${__dirname}${process.env.EXPRESS_STATIC_FILES}`));
 
 // register express routes from defined application routes
 Routes.forEach(route => {
@@ -26,8 +25,8 @@ Routes.forEach(route => {
     (req: Request, res: Response, next: Function) => {
       const result = new (validRoute.controller as any)()[validRoute.action](req, res, next);
       if (result instanceof Promise) {
-        result.then((result) => {
-            return result !== null && result !== undefined ? res.send(result) : undefined;
+        result.then(result => {
+          return result !== null && result !== undefined ? res.send(result) : undefined;
         });
       } else if (result !== null && result !== undefined) {
         res.json(result);
