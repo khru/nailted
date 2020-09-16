@@ -177,8 +177,8 @@
 </template>
 
 <script lang="ts">
-import { UserDTO } from './UserDTO';
-import { UsersCollection } from './UsersCollection';
+import { UserDTO } from "./UserDTO";
+import { UsersCollection } from "./UsersCollection";
 
 export default {
     name: "UserList",
@@ -242,7 +242,9 @@ export default {
             fetch(`${process.env.VUE_APP_API_URL}/users`)
                 .then(resp => resp.json())
                 .then(users => {
-                    const usersOrderByFullName = users.map(user => new UserDTO(user)).sort(UserDTO.compareByFullName());
+                    const usersOrderByFullName = users
+                        .map(user => new UserDTO(user))
+                        .sort(UserDTO.compareByFullName());
                     this.usersPerPage = new UsersCollection(
                         this.paginationLimit,
                         usersOrderByFullName

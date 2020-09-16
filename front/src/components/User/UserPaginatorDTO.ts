@@ -1,10 +1,10 @@
-import {UserDTO} from "@/components/User/UserDTO";
+import { UserDTO } from "@/components/User/UserDTO";
 export class UserPaginatorDTO {
-  page: number;
-  users: Array<UserDTO>;
+    page: number;
+    users: Array<UserDTO>;
 
-  constructor(page: number, users: Array<UserDTO>) {
-    this.page = page;
-    this.users = users;
-  }
+    constructor(page: number, users: Array<UserDTO>) {
+        this.page = page;
+        this.users = users;
+    }
 }
