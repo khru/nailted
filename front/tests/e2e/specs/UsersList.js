@@ -8,9 +8,11 @@ describe("My First Test", () => {
 
   it("It should be able to filter data", () => {
     cy.visit("/");
-    cy.get("tr").should('have.length', 6);
+    cy.get("tr").should("have.length", 6);
     cy.get("input").type("a");
-    cy.get("tr").its('length').should('be.gte', 6);
+    cy.get("tr")
+      .its("length")
+      .should("be.gte", 6);
     cy.get("input").clear();
   });
 
