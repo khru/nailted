@@ -20,7 +20,7 @@
                         </svg>
                     </span>
                     <input
-                        v-model="searchedEmail"
+                        v-model="searchedTerm"
                         placeholder="Search"
                         class="appearance-none rounded-r rounded-l sm:rounded-l-none border border-gray-400 border-b block pl-8 pr-6 py-2 w-full bg-white text-sm placeholder-gray-400 text-gray-700 focus:bg-white focus:placeholder-gray-600 focus:text-gray-700 focus:outline-none"
                     />
@@ -133,7 +133,7 @@
                     >
                         <span
                             id="result-count"
-                            v-if="!searchedEmail"
+                            v-if="!searchedTerm"
                             class="text-xs xs:text-sm text-gray-900"
                         >
                             Showing
@@ -145,11 +145,16 @@
                             of {{ totalOfUsers }} Entries
                         </span>
                         <span
-                            v-if="searchedEmail"
+                            v-if="searchedTerm"
                             class="text-xs xs:text-sm text-gray-900"
                         >
-                            Showing {{ filterUserByEmail.length }} of
-                            {{ totalOfUsers }} Entries
+                            Showing
+                            {{
+                                filterUserByEmail.usersPerPage
+                                    ? filterUserByEmail.usersPerPage.length
+                                    : 0
+                            }}
+                            of {{ totalOfUsers }} Entries
                         </span>
                         <div class="inline-flex mt-2 xs:mt-0">
                             <button
@@ -162,8 +167,7 @@
                             <button
                                 v-on:click="nextPage()"
                                 v-if="
-                                    currentPage < amountOfPages &&
-                                        !searchedEmail
+                                    currentPage < amountOfPages && !searchedTerm
                                 "
                                 class="text-sm bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold py-2 px-4 rounded-r"
                             >
@@ -178,7 +182,6 @@
 </template>
 
 <script lang="ts">
-import { UserDTO } from "./UserDTO";
 import { UsersCollection } from "./UsersCollection";
 
 export default {
@@ -187,8 +190,8 @@ export default {
         return {
             paginationLimit: 5,
             currentPage: 0,
-            searchedEmail: "",
-            usersPerPage: []
+            searchedTerm: "",
+            userCollection: []
         };
     },
     methods: {
@@ -204,38 +207,27 @@ export default {
     },
     computed: {
         amountOfPages: function() {
-            return this.usersPerPage.length - 1;
+            return this.userCollection.usersPerPage
+                ? this.userCollection.usersPerPage.length - 1
+                : 0;
         },
         totalOfUsers: function() {
-            return this.usersPerPage.length * this.paginationLimit;
+            return this.userCollection.usersPerPage
+                ? this.userCollection.usersPerPage.length * this.paginationLimit
+                : 0;
         },
         filterUserByEmail: function() {
-            if (!this.searchedEmail && "" !== !this.email?.trim()) {
-                if (undefined !== this.usersPerPage[this.currentPage]) {
-                    return this.usersPerPage[this.currentPage].users;
+            if ("" === this.searchedTerm.trim()) {
+                if (undefined !== this.userCollection.usersPerPage) {
+                    return this.userCollection.getUserPerPageNumber(
+                        this.currentPage
+                    ).users;
                 }
                 return [];
             }
 
-            return this.usersPerPage
-                .map(usersPerPage => usersPerPage.users)
-                .flat()
-                .filter(user => {
-                    return (
-                        user.email
-                            .toLowerCase()
-                            .includes(this.searchedEmail.toLowerCase()) ||
-                        user.fullName
-                            .toLowerCase()
-                            .includes(this.searchedEmail.toLowerCase()) ||
-                        user.phone
-                            .toLowerCase()
-                            .includes(this.searchedEmail.toLowerCase()) ||
-                        user.address
-                            .toLowerCase()
-                            .includes(this.searchedEmail.toLowerCase())
-                    );
-                });
+            return this.userCollection.filterUserBySearchTerm(this.searchedTerm)
+                .users;
         }
     },
     async mounted() {
@@ -243,14 +235,11 @@ export default {
             fetch(`${process.env.VUE_APP_API_URL}/users`)
                 .then(resp => resp.json())
                 .then(users => {
-                    const usersOrderByFullName = users
-                        .map(user => new UserDTO(user))
-                        .sort(UserDTO.compareByFullName());
-                    this.usersPerPage = new UsersCollection(
+                    this.userCollection = new UsersCollection(
                         this.paginationLimit,
-                        usersOrderByFullName
-                    ).usersPerPage;
-                    resolve(this.usersPerPage);
+                        users
+                    );
+                    resolve(this.userCollection);
                 })
                 .catch(reason => {
                     console.error(reason);
