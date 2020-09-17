@@ -27,10 +27,10 @@ help:
 	@echo "  env/to_base_64           🔒 creates a env_base64 file with de content of all the .env files of the app"
 	@echo "  env/base_64_to_env       🔓 restore .env files with the development information"
 
-run: env-example run/api run/front
+run: env/example run/api run/front
 	@echo "🌟 All the docker containers running"
 
-stop: env-example stop/api stop/front
+stop: env/example stop/api stop/front
 	@echo "🛑 All the docker containers stopped"
 
 run/api:
