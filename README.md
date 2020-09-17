@@ -1,5 +1,33 @@
-# Enviroment documentation
+# Environment documentation
 Tu run this project you can use the `make` command
+
+## Creating your development environment
+### Pre-requirements
+* `make`
+* `docker` and `docker-compose`
+
+If you don't have the `make` command on your system you may have to install it first
+```bash
+sudo apt-get install build-essential
+```
+
+After this if you are on a Linux machine you can run the command `make pre_requirements` which will install `docker` and `docker-compose` for you
+
+# Run the environment
+Run the following commands
+* `make permissions`: To grant permissions to the .sh scripts
+* `make env/create`: Create .env files with the development values
+* `make run`: To start the application
+
+You might want to see the logs to know if the application is running
+ `make log/api`: To see the logs on the API
+ `make log/front`: To see the logs on the front
+
+# Entry points
+* **API**: [http://localhost:3000](http://localhost:3000) [/users to list the users]
+* **FRONT**:[http://localhost](http://localhost)
+
+👀 If you have any application running on ports 80 or 3000. Stop them and run again the docker containers or change the configuration on the .env files and run the containers again
 
 # Task
 ```

@@ -132,6 +132,7 @@
                         class="px-5 py-5 bg-white border-t flex flex-col xs:flex-row items-center xs:justify-between"
                     >
                         <span
+                            id="result-count"
                             v-if="!searchedEmail"
                             class="text-xs xs:text-sm text-gray-900"
                         >
