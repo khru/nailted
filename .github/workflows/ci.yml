@@ -23,7 +23,7 @@ jobs:
         run: make test/api
       - name: ☢ Execute frontend unit test
         run: make test/front-unit
-      - name: ☢ Execute frontend end to end testing
-        run: make test/front-e2e-headless
+      #- name: ☢ Execute frontend end to end testing
+        #run: make test/front-e2e-headless
       - name: ✋ Stop containers
         run: make stop

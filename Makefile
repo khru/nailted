@@ -54,10 +54,10 @@ test/api: run/api
 test/front: run/front test/front-unit test/front-e2e-headless
 
 test/front-unit:
-	cd $(FRONT_FOLDER); npm run test:unit
+	cd $(FRONT_FOLDER); npm run docker:unit
 
 test/front-e2e-headless:
-	cd $(FRONT_FOLDER); npm run test:e2e-headless
+	cd $(FRONT_FOLDER); npm run docker:e2e-headless
 
 test/front-e2e:
 	cd $(FRONT_FOLDER); npm run test:e2e

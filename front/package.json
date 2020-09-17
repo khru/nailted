@@ -9,7 +9,11 @@
     "test:e2e": "vue-cli-service test:e2e",
     "test:e2e-headless": "vue-cli-service test:e2e --headless",
     "lint": "vue-cli-service lint",
-    "generate:env-example": "./scripts/generate_env_example.sh"
+    "generate:env-example": "./scripts/generate_env_example.sh",
+    "docker:unit": "./scripts/docker/unit.sh",
+    "docker:e2e": "./scripts/docker/e2e.sh",
+    "docker:e2e-headless": "./scripts/docker/e2e.sh",
+    "docker:cypress-install": "./scripts/docker/cypress_install.sh"
   },
   "dependencies": {
     "core-js": "^3.6.5",

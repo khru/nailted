@@ -13,4 +13,4 @@ services:
       - ${NODE_PORT}:${NODE_PORT}
     environment:
       - PORT=${NODE_PORT}
-    command: sh -c "npm install && npm audit fix --force && npm run serve"
+    command: sh -c "npm install && npm audit fix --force && npm run docker:cypress-install && npm run serve"
