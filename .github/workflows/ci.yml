@@ -1,13 +1,14 @@
 on: push
 name: Execute test on push
 jobs:
-  tests:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: 🕎 Clone and checkout of the actual branch
         uses: actions/checkout@v2
       - name: ©️ Copy .env.example to .env
-        run: cp .env.example .env
+        run: |
+          cp .env.example .env
       - name: 🔐 Permissions
         run: make permissions
       - name: 🏞 Create .env

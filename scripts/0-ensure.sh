@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 function ensure::jq() {
 	REQUIRED_PKG=jq
 	PKG_OK=$(dpkg-query -W --showformat='${Status}\n' $REQUIRED_PKG|grep "install ok installed")

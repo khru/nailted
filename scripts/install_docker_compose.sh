@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 source "${BASH_SOURCE%/*}/0-ensure.sh"
 ensure::jq
 ensure::curl
