@@ -16,9 +16,9 @@ jobs:
       - name: 🐇💨 Run apps
         run: make run
       - name: 😴 Sleep for 40 seconds
-          uses: jakejarvis/wait-action@master
-          with:
-            time: '40s'
+        uses: jakejarvis/wait-action@master
+        with:
+          time: '40s'
       - name: ☢ Execute API test
         run: make test/api
       - name: ☢ Execute frontend unit test
