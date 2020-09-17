@@ -87,7 +87,8 @@ env/to_base_64:
 	$(SCRIPTS_FOLDER)/env_files_to_64.sh > env_base64
 	
 env/base_64_to_env:
-	$(SCRIPTS_FOLDER)/base_64_to_env.sh
+# DO NOT CHANGE FOR $(SCRIPTS_FOLDER)
+	./scripts/base_64_to_env.sh
 
 env/create: env/base_64_to_env
 
