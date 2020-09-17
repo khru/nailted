@@ -15,7 +15,7 @@ export class Birthdate extends StringAttribute {
   }
   throwErrorIfInvalidBirthDateFormat(birthDate: string): void {
     if (!this.VALID_DATE_REGEX.test(birthDate)) {
-      throw new InvalidBirthDateFormatError('Invalid format on the email address');
+      throw new InvalidBirthDateFormatError('Invalid format on the date of birth');
     }
   }
 
