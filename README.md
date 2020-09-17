@@ -138,3 +138,4 @@ To-DO
 - [ ] The user creation should be able to handle multiple errors on creation.
 - [ ] Extract testing doubles from the testcases to other files (+ readability)
 - [ ] The framework should have DI support using inversify.js
+- [ ] Some test are on the API repo and on the Front repo because they solve the same domain problems but on different applications
