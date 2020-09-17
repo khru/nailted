@@ -18,8 +18,8 @@ help:
 	@echo "  log/front                💽 Front logs from the docker container"
 	@echo "  test/front               ✔️ Launch the tests on the front-end application"
 	@echo "  test/front-unit          ✔️ Launch the unit tests on the front-end application"
-	@echo "  test/front-e2e           ✔️ Launch the end to end tests with crypress app on the front-end application"
-	@echo "  test/front-e2e-headless  ✔️ Launch the end to end tests with chrome headless on the front-end application"
+	@echo "  test/front-e2e           ✔️ Launch the end to end tests with crypress app on the front-end application (runs on your system because of the dockers chrome browser version)"
+	@echo "  test/front-e2e-headless  ✔️ Launch the end to end tests with chrome headless on the front-end application (runs on your system because of the dockers chrome browser version)"
 	@echo "  test/api                 ✔️ Launch the tests on the back-end application"
 	@echo "  permissions              🔑 Gives permissions to the 'scripts' folder"
 	@echo "  env/example              🧬 Creates the .env file with the project config"
@@ -57,7 +57,7 @@ test/front-unit:
 	cd $(FRONT_FOLDER); npm run docker:unit
 
 test/front-e2e-headless:
-	cd $(FRONT_FOLDER); npm run docker:e2e-headless
+	cd $(FRONT_FOLDER); npm npm run test:e2e
 
 test/front-e2e:
 	cd $(FRONT_FOLDER); npm run test:e2e
@@ -73,6 +73,12 @@ log/api:
 
 log/front:
 	cd $(value FRONT_FOLDER); docker-compose logs -f -t
+
+front/npm-update:
+	cd $(value FRONT_FOLDER); npm update
+
+api/npm-update:
+	cd $(value API_FOLDER); npm update
 
 permissions:
 	@find . -maxdepth 2 -type d -name "scripts" | xargs sudo chmod -R +x

@@ -15,6 +15,7 @@ After this if you are on a Linux machine you can run the command `make pre_requi
 
 # Run the environment
 Run the following commands
+* `cp .env.example .env` or `touch .env`: because the Makefile needs to have the file
 * `make permissions`: To grant permissions to the .sh scripts
 * `make env/create`: Create .env files with the development values
 * `make run`: To start the application
