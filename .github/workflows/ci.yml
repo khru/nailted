@@ -1,20 +1,20 @@
 on: push
 name: Execute test on push
 jobs:
-    tests:
-        runs-on: ubuntu-latest
-        steps:
-            - name: 🕎 Clone and checkout of the actual branch
-              uses: actions/checkout@v2
-            - name: 🔐 Permissions
-              run: make permissions
-            - name: 🏞 Create .env
-              run: make env/create
-            - name: ☢ Execute API test
-              run: make test/api
-            - name: ☢ Execute frontend unit test
-                run: make test/front-unit
-            - name: ☢ Execute frontend end to end testing
-                run: make test/front-e2e-headless
-            - name: ✋ Stop containers
-              run: make stop
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🕎 Clone and checkout of the actual branch
+        uses: actions/checkout@v2
+      - name: 🔐 Permissions
+        run: make permissions
+      - name: 🏞 Create .env
+        run: make env/create
+      - name: ☢ Execute API test
+        run: make test/api
+      - name: ☢ Execute frontend unit test
+        run: make test/front-unit
+      - name: ☢ Execute frontend end to end testing
+        run: make test/front-e2e-headless
+      - name: ✋ Stop containers
+        run: make stop
