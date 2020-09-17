@@ -11,6 +11,8 @@ help:
 	@echo "  run                      🚀 Starts the api and front"
 	@echo "  run/front                🚀 Starts the front"
 	@echo "  run/api                  🚀 Starts the api"
+	@echo "  npm-update/api           ⏫ npm update"
+	@echo "  npm-update/front         ⏫ npm update"
 	@echo "  stop                      ✋ Stops the apps"
 	@echo "  stop/front                ✋ Stops the front"
 	@echo "  stop/api                  ✋ Stops the api"
@@ -57,7 +59,7 @@ test/front-unit:
 	cd $(FRONT_FOLDER); npm run docker:unit
 
 test/front-e2e-headless:
-	cd $(FRONT_FOLDER); npm npm run test:e2e
+	cd $(FRONT_FOLDER); npm run test:e2e-headless
 
 test/front-e2e:
 	cd $(FRONT_FOLDER); npm run test:e2e
@@ -74,10 +76,10 @@ log/api:
 log/front:
 	cd $(value FRONT_FOLDER); docker-compose logs -f -t
 
-front/npm-update:
+npm-update/front:
 	cd $(value FRONT_FOLDER); npm update
 
-api/npm-update:
+npm-update/api:
 	cd $(value API_FOLDER); npm update
 
 permissions:

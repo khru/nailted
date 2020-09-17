@@ -1,3 +1,4 @@
+![Execute test on push](https://github.com/khru/nailted/workflows/Execute%20test%20on%20push/badge.svg)
 # Environment documentation
 Tu run this project you can use the `make` command
 
@@ -105,7 +106,7 @@ To-DO
         - [X] Create List component (I choose to do all the logic on the front because it's only a prototype)
             - [X] Implement the pagination on the front
             - [X] Implement the order of the list item
-            - [X] Implement the filter
+            - [X] Implement the filter by email (I've implemented for name, phone and address too)
         - [ ] Create User component
         - [ ] Create CreateUser component
     - [ ] Create cypress test
