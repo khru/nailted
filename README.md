@@ -128,7 +128,9 @@ To-DO
 * **The task: It should be possible to see only one employee**: *I think it's solved while filtering*
 * In a normal situation I would have created 2 repositories that way I could have use github actions as well as husky on commit
 * The front-end app may be slow on boot time thats because of vue-cli system not the design
-
+* It need more test and testing doubles
+    * Repository
+    * Use Case
 # Improves
 - [ ] Frontend features
     - [ ] Pagination
