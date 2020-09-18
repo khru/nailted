@@ -110,7 +110,7 @@ To-DO
         - [X] Create User component
         - [ ] ~~Create CreateUser component~~ [No time]
     - [X] Create cypress test [**BASIC**]
-    - [ ] Create environment documentation
+    - [X] Create environment documentation
 - phase 3 - Design application backend
     - [X] Create API design
         - [X] Create User entity
@@ -124,11 +124,9 @@ To-DO
             - [X] CreateUser
     - [X] Create environment documentation and API documentation
 
- **I've try to use github actions to validate the testing pipelines, but I've did not want to lose much time,
- so it's not added on the first release**
-
- In a normal situation I would have created 2 repositories that way I could have use github actions as well as husky on commit
-
+## Notes
+* **The task: It should be possible to see only one employee**: *I think it's solved while filtering*
+* In a normal situation I would have created 2 repositories that way I could have use github actions as well as husky on commit
 
 # Improves
 - [ ] Frontend features
@@ -140,3 +138,4 @@ To-DO
 - [ ] Extract testing doubles from the testcases to other files (+ readability)
 - [ ] The framework should have DI support using inversify.js
 - [ ] Some test are on the API repo and on the Front repo because they solve the same domain problems but on different applications
+
