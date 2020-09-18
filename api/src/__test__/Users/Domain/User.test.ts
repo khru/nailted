@@ -336,16 +336,6 @@ const USER_JSON = {
   surname: 'Cox',
 };
 
-const FRONT_USER_DATA = {
-  "id":"cixytdc7mqd",
-  "name":"aa",
-  "surname":"aa",
-  "address":"aaaa",
-  "email":"aa@aa",
-  "phone":"555-555-5555",
-  "birthdate":"17/09/2020",
-  "fullName":"aa aa"
-};
 
 describe('It should validate the data the gets from the csv file', () => {
   it('should create a valid User', () => {

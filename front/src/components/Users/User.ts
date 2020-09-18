@@ -28,7 +28,7 @@ export class User implements ToJSON {
             this.address = `${user.address.trim()}`;
             this.phone = `${user.phone.trim()}`;
             this.email = `${user.email.trim()}`;
-            this.birthDate = `${user.birthDate.trim()}`;
+            this.birthDate = `${user.birthdate.trim()}`;
         } catch (userCreationError) {
             throw new InvalidUserError(
                 `An Error has occurred creating a new User with data ${JSON.stringify(
@@ -129,8 +129,7 @@ export class User implements ToJSON {
 
     toJSON(): object {
         return JSON.parse(
-            `{ "id": "${this.id}", "name": "${this.name}", "surname": "${this.surname}", "address": "${this.address}", "email": "${this.email}", "phone": "${this.phone}", "birthDate": "${this.birthDate}", "fullName": "${this.fullName}"}`
-
+            `{ "id": "${this.id}", "name": "${this.name}", "surname": "${this.surname}", "address": "${this.address}", "email": "${this.email}", "phone": "${this.phone}", "birthdate": "${this.birthDate}", "fullName": "${this.fullName}"}`
         );
     }
 }

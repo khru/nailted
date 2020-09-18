@@ -1,4 +1,4 @@
-import { Birthdate } from '../../../Users/Domain/BirthDate';
+import { BirthDate } from '../../../Users/Domain/BirthDate';
 
 const VALID_DATES = [
   '10/12/1985',
@@ -48,17 +48,17 @@ const EMPTY_NAME = '';
 describe('It should validate the birth date attribute', () => {
   it('should create a valid birth date', () => {
     VALID_DATES.forEach(birthDate => {
-      expect(new Birthdate(birthDate).value).toBe(birthDate);
+      expect(new BirthDate(birthDate).value).toBe(birthDate);
     });
   });
 
   it('should fail on creating a birth date', () => {
-    expect(() => new Birthdate(EMPTY_NAME)).toThrowError(/^EmptyAtributeError.*/);
+    expect(() => new BirthDate(EMPTY_NAME)).toThrowError(/^EmptyAtributeError.*/);
   });
 
   it('should fail on creating an birth date with an invalid birth date', () => {
     INVALID_DATES.forEach(birthDate => {
-      expect(() => new Birthdate(birthDate)).toThrowError(/^InvalidBirthDateFormatError.*/);
+      expect(() => new BirthDate(birthDate)).toThrowError(/^InvalidBirthDateFormatError.*/);
     });
   });
 });

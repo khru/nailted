@@ -8,7 +8,7 @@ const VALID_DATA = [
         address: "4945 Lucky Duck Drive",
         phone: "412-862-8457",
         email: "DellaDCox@superrito.com",
-        birthDate: "10/12/1985"
+        birthdate: "10/12/1985"
     },
     {
         id: "2",
@@ -17,7 +17,7 @@ const VALID_DATA = [
         address: "495 Rafe Lane",
         phone: "662-729-8758",
         email: "WalterJJeske@armyspy.com",
-        birthDate: "3/15/1951"
+        birthdate: "3/15/1951"
     },
     {
         id: "3",
@@ -26,7 +26,7 @@ const VALID_DATA = [
         address: "4738 Woodside Circle",
         phone: "850-868-3521",
         email: "RonAPlaza@dayrep.com",
-        birthDate: "3/30/1990"
+        birthdate: "3/30/1990"
     },
     {
         id: "4",
@@ -35,7 +35,7 @@ const VALID_DATA = [
         address: "4190 Tully Street",
         phone: "313-651-6614",
         email: "EmmaAKwak@cuvox.de",
-        birthDate: "3/12/1940"
+        birthdate: "3/12/1940"
     },
     {
         id: "5",
@@ -44,7 +44,7 @@ const VALID_DATA = [
         address: "3839 Fulton Street",
         phone: "304-405-5250",
         email: "JimmyTSmith@jourrapide.com",
-        birthDate: "2/25/1953"
+        birthdate: "2/25/1953"
     },
     {
         id: "6",
@@ -53,7 +53,7 @@ const VALID_DATA = [
         address: "4187 Arrowood Drive",
         phone: "904-495-3469",
         email: "CeciliaGTemple@gustr.com",
-        birthDate: "8/24/1987"
+        birthdate: "8/24/1987"
     },
     {
         id: "7",
@@ -62,7 +62,7 @@ const VALID_DATA = [
         address: "3474 White Oak Drive",
         phone: "816-761-4637",
         email: "RuthPStory@dayrep.com",
-        birthDate: "11/28/1963"
+        birthdate: "11/28/1963"
     },
     {
         id: "8",
@@ -71,7 +71,7 @@ const VALID_DATA = [
         address: "1447 Viking Drive",
         phone: "740-782-7580",
         email: "BrendaRReynolds@superrito.com",
-        birthDate: "11/25/1955"
+        birthdate: "11/25/1955"
     },
     {
         id: "9",
@@ -80,7 +80,7 @@ const VALID_DATA = [
         address: "2683 West Drive",
         phone: "312-495-7822",
         email: "ReneSLewis@dayrep.com",
-        birthDate: "6/22/1977"
+        birthdate: "6/22/1977"
     },
     {
         id: "10",
@@ -89,7 +89,7 @@ const VALID_DATA = [
         address: "4246 Rogers Street",
         phone: "513-587-4936",
         email: "DaleCWard@superrito.com",
-        birthDate: "7/13/1964"
+        birthdate: "7/13/1964"
     },
     {
         id: "11",
@@ -98,7 +98,7 @@ const VALID_DATA = [
         address: "496 Ritter Avenue",
         phone: "586-722-0839",
         email: "PamelaMGilman@einrot.com",
-        birthDate: "7/18/1935"
+        birthdate: "7/18/1935"
     },
     {
         id: "12",
@@ -107,7 +107,7 @@ const VALID_DATA = [
         address: "3475 Ferrell Street",
         phone: "218-353-1459",
         email: "ClarenceWGoebel@armyspy.com",
-        birthDate: "12/23/1993"
+        birthdate: "12/23/1993"
     },
     {
         id: "13",
@@ -116,7 +116,7 @@ const VALID_DATA = [
         address: "1693 Green Gate Lane",
         phone: "443-715-2332",
         email: "MichelleKReed@fleckens.hu",
-        birthDate: "4/30/2000"
+        birthdate: "4/30/2000"
     },
     {
         id: "14",
@@ -125,7 +125,7 @@ const VALID_DATA = [
         address: "2993 Yorkshire Circle",
         phone: "252-287-8673",
         email: "LouisKMartin@dayrep.com",
-        birthDate: "3/16/1945"
+        birthdate: "3/16/1945"
     },
     {
         id: "15",
@@ -134,7 +134,7 @@ const VALID_DATA = [
         address: "677 Oakwood Avenue",
         phone: "212-635-3373",
         email: "BettyKLance@gustr.com",
-        birthDate: "9/7/1980"
+        birthdate: "9/7/1980"
     },
     {
         id: "16",
@@ -143,7 +143,7 @@ const VALID_DATA = [
         address: "2313 Swick Hill Street",
         phone: "980-581-8871",
         email: "DeanLFlood@einrot.com",
-        birthDate: "12/12/1950"
+        birthdate: "12/12/1950"
     },
     {
         id: "17",
@@ -152,7 +152,7 @@ const VALID_DATA = [
         address: "31 Browning Lane",
         phone: "607-988-3426",
         email: "RicardoCClark@einrot.com",
-        birthDate: "7/23/1995"
+        birthdate: "7/23/1995"
     },
     {
         id: "18",
@@ -161,7 +161,7 @@ const VALID_DATA = [
         address: "3661 Godfrey Street",
         phone: "503-617-8335",
         email: "DevoraCWalker@gustr.com",
-        birthDate: "10/25/1991"
+        birthdate: "10/25/1991"
     },
     {
         id: "19",
@@ -170,7 +170,7 @@ const VALID_DATA = [
         address: "3389 Hinkle Deegan Lake Road",
         phone: "607-215-4985",
         email: "LisaMToups@teleworm.us",
-        birthDate: "9/11/1970"
+        birthdate: "9/11/1970"
     },
     {
         id: "20",
@@ -179,7 +179,7 @@ const VALID_DATA = [
         address: "331 Neuport Lane",
         phone: "770-378-4374",
         email: "JamesJOBrian@einrot.com",
-        birthDate: "7/19/1935"
+        birthdate: "7/19/1935"
     },
     {
         id: "21",
@@ -188,7 +188,7 @@ const VALID_DATA = [
         address: "1779 Atha Drive",
         phone: "661-695-3020",
         email: "MarcoPDube@rhyta.com",
-        birthDate: "7/25/1939"
+        birthdate: "7/25/1939"
     },
     {
         id: "22",
@@ -197,7 +197,7 @@ const VALID_DATA = [
         address: "680 Stadium Drive",
         phone: "508-297-3773",
         email: "DeborahDDouglas@teleworm.us",
-        birthDate: "2/12/1959"
+        birthdate: "2/12/1959"
     },
     {
         id: "23",
@@ -206,7 +206,7 @@ const VALID_DATA = [
         address: "2875 Euclid Avenue",
         phone: "805-303-4353",
         email: "CharlesCHansen@dayrep.com",
-        birthDate: "2/9/1999"
+        birthdate: "2/9/1999"
     },
     {
         id: "24",
@@ -215,7 +215,7 @@ const VALID_DATA = [
         address: "4870 Edgewood Road",
         phone: "901-259-9658",
         email: "JamesMGlenn@teleworm.us",
-        birthDate: "7/7/1990"
+        birthdate: "7/7/1990"
     },
     {
         id: "25",
@@ -224,7 +224,7 @@ const VALID_DATA = [
         address: "3156 Big Elm",
         phone: "816-840-3649",
         email: "CindyJPaul@fleckens.hu",
-        birthDate: "4/23/1994"
+        birthdate: "4/23/1994"
     },
     {
         id: "26",
@@ -233,7 +233,7 @@ const VALID_DATA = [
         address: "945 Hickman Street",
         phone: "630-421-0480",
         email: "MaryBHernandez@teleworm.us",
-        birthDate: "6/14/1939"
+        birthdate: "6/14/1939"
     },
     {
         id: "27",
@@ -242,7 +242,7 @@ const VALID_DATA = [
         address: "4347 Todds Lane",
         phone: "210-465-6307",
         email: "NancyNVillarreal@armyspy.com",
-        birthDate: "9/21/1959"
+        birthdate: "9/21/1959"
     },
     {
         id: "28",
@@ -251,7 +251,7 @@ const VALID_DATA = [
         address: "426 Bryan Street",
         phone: "336-284-1978",
         email: "ColbyVLincoln@superrito.com",
-        birthDate: "4/8/1996"
+        birthdate: "4/8/1996"
     },
     {
         id: "29",
@@ -260,7 +260,7 @@ const VALID_DATA = [
         address: "1858 Water Street",
         phone: "925-250-0317",
         email: "RobertKRetzlaff@superrito.com",
-        birthDate: "6/20/1951"
+        birthdate: "6/20/1951"
     },
     {
         id: "30",
@@ -269,7 +269,7 @@ const VALID_DATA = [
         address: "1925 Mattson Street",
         phone: "503-431-9711",
         email: "DonaldBSchmidt@rhyta.com",
-        birthDate: "11/27/1952"
+        birthdate: "11/27/1952"
     }
 ];
 
@@ -323,7 +323,7 @@ const INVALID_DATA = [
 
 const USER_JSON = {
     address: "4945 Lucky Duck Drive",
-    birthDate: "10/12/1985",
+    birthdate: "10/12/1985",
     email: "DellaDCox@superrito.com",
     fullName: "Della Cox",
     id: "1",
