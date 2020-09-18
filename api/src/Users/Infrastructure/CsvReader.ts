@@ -1,4 +1,4 @@
-import { Readable } from '../../Readable';
+import { Readable } from '../Domain/Readable';
 import { Logger } from '../../Logger';
 const CSVToJSON = require('csvtojson');
 

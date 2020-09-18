@@ -21,6 +21,7 @@ help:
 	@echo "  stop/api                 ✋ Stops the api"
 	@echo "  log/api                  💽 API logs from the docker container"
 	@echo "  log/front                💽 Front logs from the docker container"
+	@echo "  test/front               ✔️ Launch for the front and the back"
 	@echo "  test/front               ✔️ Launch the tests on the front-end application"
 	@echo "  test/front-unit          ✔️ Launch the unit tests on the front-end application"
 	@echo "  test/front-e2e           ✔️ Launch the end to end tests with crypress app on the front-end application (runs on your system because of the dockers chrome browser version)"
@@ -52,6 +53,8 @@ stop/front:
 
 test/api-watch: run/api
 	cd $(API_FOLDER); npm run test:watch
+
+test: test/api test/front
 
 test/api: run/api
 	cd $(API_FOLDER); npm run test

@@ -2,7 +2,7 @@ import { UsersRepository } from '../Domain/UsersRepository';
 import { User } from '../Domain/User';
 import { ValidUserData } from '../Domain/ValidUserData';
 import { Logger } from '../../Logger';
-import { Readable } from '../../Readable';
+import { Readable } from '../Domain/Readable';
 import { Writeable } from '../Domain/Writeable';
 import { ToCSV } from '../Domain/ToCSV';
 
