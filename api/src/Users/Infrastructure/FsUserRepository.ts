@@ -4,7 +4,7 @@ import { ValidUserData } from '../Domain/ValidUserData';
 import { Logger } from '../../Logger';
 import { Readable } from '../../Readable';
 import { Writeable } from '../Domain/Writeable';
-import {ToCSV} from "../Domain/ToCSV";
+import { ToCSV } from '../Domain/ToCSV';
 
 export class FsUserRepository implements UsersRepository {
   protected readonly logger;

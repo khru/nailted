@@ -336,7 +336,6 @@ const USER_JSON = {
   surname: 'Cox',
 };
 
-
 describe('It should validate the data the gets from the csv file', () => {
   it('should create a valid User', () => {
     VALID_USER_DATA.forEach(user => {

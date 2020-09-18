@@ -3,8 +3,8 @@ import { ConsoleLogger } from '../../../Users/Infrastructure/ConsoleLogger';
 import { CsvReader } from '../../../Users/Infrastructure/CsvReader';
 import { UsersRepository } from '../../../Users/Domain/UsersRepository';
 import { User } from '../../../Users/Domain/User';
-import {CsvWriter} from "../../../Users/Infrastructure/CsvWriter";
-import {UserToCsv} from "../../../Users/Domain/UserToCsv";
+import { CsvWriter } from '../../../Users/Infrastructure/CsvWriter';
+import { UserToCsv } from '../../../Users/Domain/UserToCsv';
 
 describe('It should validate the Address attribute', () => {
   let repository: UsersRepository;

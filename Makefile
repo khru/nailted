@@ -13,6 +13,9 @@ help:
 	@echo "  run/api                  🚀 Starts the api"
 	@echo "  npm-update/api           ⏫ npm update"
 	@echo "  npm-update/front         ⏫ npm update"
+	@echo "  lint                     🧽 Lints and fixed the Front and the API"
+	@echo "  lint/front               🧽 Lints and fixed the Front"
+	@echo "  lint/back                🧽 Lints and fixed the API"
 	@echo "  stop                     ✋ Stops the apps"
 	@echo "  stop/front               ✋ Stops the front"
 	@echo "  stop/api                 ✋ Stops the api"
@@ -63,6 +66,8 @@ test/front-e2e-headless:
 
 test/front-e2e:
 	cd $(FRONT_FOLDER); npm run test:e2e
+
+lint: lint/api lint/front
 
 lint/front: run/front
 	cd $(FRONT_FOLDER); npm run lint --fix
