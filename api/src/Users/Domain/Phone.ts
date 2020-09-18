@@ -6,7 +6,7 @@ export class Phone extends StringAttribute {
   readonly value: string;
   constructor(phone: string) {
     super();
-    this.throwErrorIfEmptyAttribute(phone, 'The attribute email can not be empty');
+    this.throwErrorIfEmptyAttribute(phone, 'The attribute phone number can not be empty');
     this.throwErrorIfInvalidPhoneNumber(phone);
     this.value = phone;
   }

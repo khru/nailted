@@ -1,7 +1,7 @@
 import { StringAttribute } from './StringAttribute';
 import { InvalidBirthDateFormatError } from './InvalidBirthDateFormatError';
 
-export class Birthdate extends StringAttribute {
+export class BirthDate extends StringAttribute {
   private readonly VALID_DATE_REGEX: RegExp = new RegExp(
     /^[0-1]{0,1}[0-9]{1}\/[0-3]{0,1}[0-9]{1}\/[0-9]{4}$/gm,
   );
@@ -19,7 +19,7 @@ export class Birthdate extends StringAttribute {
     }
   }
 
-  equals(birthDate: Birthdate): boolean {
+  equals(birthDate: BirthDate): boolean {
     return this.value === birthDate.value;
   }
 }

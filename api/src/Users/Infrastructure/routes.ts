@@ -9,7 +9,7 @@ export const Routes = [
   },
   {
     method: 'post',
-    route: '/user/:id',
+    route: '/user/',
     controller: UserController,
     action: 'create',
   },

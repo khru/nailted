@@ -50,6 +50,7 @@
     "@types/express": "^4.17.7",
     "body-parser": "^1.18.1",
     "cors": "^2.8.5",
+    "csv-write-stream": "^2.0.0",
     "csvtojson": "^2.0.10",
     "dotenv": "^8.2.0",
     "empty-middleware": "^0.1.0",

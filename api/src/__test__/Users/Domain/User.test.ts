@@ -328,12 +328,23 @@ const INVALID_USER_DATA: ValidUserData[] = new Array<ValidUserData>(...INVALID_D
 
 const USER_JSON = {
   address: '4945 Lucky Duck Drive',
-  birthDate: '10/12/1985',
+  birthdate: '10/12/1985',
   email: 'DellaDCox@superrito.com',
   id: '1',
   name: 'Della',
   phone: '412-862-8457',
   surname: 'Cox',
+};
+
+const FRONT_USER_DATA = {
+  "id":"cixytdc7mqd",
+  "name":"aa",
+  "surname":"aa",
+  "address":"aaaa",
+  "email":"aa@aa",
+  "phone":"555-555-5555",
+  "birthdate":"17/09/2020",
+  "fullName":"aa aa"
 };
 
 describe('It should validate the data the gets from the csv file', () => {
