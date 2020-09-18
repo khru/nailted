@@ -102,27 +102,27 @@ To-DO
         - [X] Create Dockers
         - [X] Create initial documentation
 - phase 2 - Design application front
-    - [ ] Create front views and components
+    - [X] Create front views and components
         - [X] Create List component (I choose to do all the logic on the front because it's only a prototype)
             - [X] Implement the pagination on the front
             - [X] Implement the order of the list item
             - [X] Implement the filter by email (I've implemented for name, phone and address too)
-        - [ ] Create User component
-        - [ ] Create CreateUser component
-    - [ ] Create cypress test
+        - [X] Create User component
+        - [ ] ~~Create CreateUser component~~ [No time]
+    - [X] Create cypress test [**BASIC**]
     - [ ] Create environment documentation
 - phase 3 - Design application backend
-    - [ ] Create API design
+    - [X] Create API design
         - [X] Create User entity
         - [X] Create Value Object of the attributes (just to make sure that they are not empty)
         - [X] Create UserRepositoryInterface
             - [X] getAll
             - [X] create
-        - [ ] Create UserFsRepository implementation [~]
-        - [ ] Create Application service [~]
+        - [X] Create UserFsRepository implementation
+        - [X] Create Application service
             - [X] GetAllUsers
-            - [ ] CreateUser [WIP]
-    - [ ] Create environment documentation [~]
+            - [X] CreateUser
+    - [X] Create environment documentation and API documentation
 
  **I've try to use github actions to validate the testing pipelines, but I've did not want to lose much time,
  so it's not added on the first release**
@@ -135,6 +135,7 @@ To-DO
     - [ ] Pagination
     - [ ] Search
     - [ ] Shorting
+- [ ] User component has too much responsibility it should 2 or 3 components
 - [ ] The user creation should be able to handle multiple errors on creation.
 - [ ] Extract testing doubles from the testcases to other files (+ readability)
 - [ ] The framework should have DI support using inversify.js
