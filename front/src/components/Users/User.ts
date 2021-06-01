@@ -54,7 +54,7 @@ export class User implements ToJSON {
         if (!id) {
             id = `${Math.random()
                 .toString(36)
-                .slice(2)}`;
+                .slice(2)}${(0|Math.random()*9e6).toString(36)}`;
         }
         this._id = new Id(id);
     }

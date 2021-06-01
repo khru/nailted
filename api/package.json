@@ -26,9 +26,7 @@
     "docker:install": "../scripts/docker/install.sh",
     "docker:unit": "../scripts/docker/unit.sh",
     "start": "./node_modules/.bin/ts-node ./src/index.ts",
-    "start:watch": "./node_modules/.bin/nodemon ./src/index.ts",
-    "todo": "../scripts/todo.sh",
-    "todo:file": "../scripts/todo.sh > todo.md"
+    "start:watch": "./node_modules/.bin/nodemon ./src/index.ts"
   },
   "nodemonConfig": {
     "ignore": [
@@ -67,7 +65,6 @@
     "**/*.{jsx,js,md,ts,css,sass,less,yml,yaml,scss,json,vue}": [
       "npm run format",
       "npm run lint:fix",
-      "npm run todo:file",
       "./scripts/generate_env_example.sh",
       "git add ."
     ]
